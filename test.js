@@ -17,13 +17,13 @@ describe('Pengujian Fungsi Matematika', function() {
   it('seharusnya mengembalikan error saat membagi dengan 0', function() {
     expect(() => bagi(6, 0)).to.throw('Tidak bisa membagi dengan nol');
   });
-  it('seharusnya mengembalikan 0 saat mengurangkan -2 - (-2)', function() {
-    expect(kurang(-2, -2)).to.equal(0);
+  it('seharusnya mengembalikan 0 saat mengurangkan -1 - (-1)', function() {
+    expect(kurang(-1, -1)).to.equal(0);
   });
   it('seharusnya mengembalikan error saat membagi input string', function() {
-    expect(() => tambah('ab', 0)).to.throw('Input Salah');
+    expect(() => tambah('string', 0)).to.throw('Input Salah');
   });
   it('seharusnya mengembalikan error saat membagi input berupa Null', function() {
-    expect(() => kali(0)).to.throw('Input Salah');
+    expect(() => kali('',0)).to.throw('Input Salah');
   });
 });

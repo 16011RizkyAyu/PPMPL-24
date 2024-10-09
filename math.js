@@ -1,30 +1,36 @@
-import { validasiInput } from "./validate.js";
-
 function tambah(a, b) {
-  var x = validasiInput(a);
-  var y = validasiInput(b);
-  return x + y;
+  if (a === undefined || b === undefined && a === null || b === null) {
+    throw new Error('Input Salah');
+  }
+  var x = typeof a
+  var y = typeof b
+  if (x === "number" && y === "number"){
+    return a + b
+  }
+  throw new Error("Input Salah")
 }
 
 function kali(a, b) {
-  var x = validasiInput(a);
-  var y = validasiInput(b);
-  return x * y;
+  if (a === undefined || b === undefined && a === null || b === null) {
+    throw new Error('Input Salah');
+  }
+  var x = typeof a
+  var y = typeof b
+  if (x === "number" && y === "number"){
+    return a * b
+  }
+  throw new Error("Input Salah")
 }
 
 function kurang(a, b) {
-  var x = validasiInput(a);
-  var y = validasiInput(b);
-  return x - y;
+  return a - b;
 }
 
 function bagi(a, b) {
-  var x = validasiInput(a);
-  var y = validasiInput(b);
-  if (y === 0) {
+  if (b === 0) {
     throw new Error('Tidak bisa membagi dengan nol');
   }
-  return x / y;
+  return a / b;
 }
 
 export { tambah, kali, kurang, bagi };
